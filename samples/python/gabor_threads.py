@@ -38,7 +38,7 @@ def process(img, filters):
         np.maximum(accum, fimg, accum)
     return accum
 
-def process_threaded(img, filters, threadn = 8):
+def process_threaded(img, filters, threadn = 16):
     accum = np.zeros_like(img)
     def f(kern):
         return cv2.filter2D(img, cv2.CV_8UC3, kern)
